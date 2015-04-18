@@ -102,14 +102,22 @@ window.addPath = function(pID, qID){
     class: "s-line"
   });
 
-  p2.animate({
-    r:14,
+  p2.attr({
+    class: 'fillme'
 
+  });
+
+  p1.attr({
+    class: 'fillme'
+
+  });
+
+  p2.animate({
+    r:14
   }, 500, mina.easeout, function(){
 
     p2.animate({
-
-      r:5,
+      r:6
     }, 500);
 
   });

@@ -19,7 +19,7 @@ if (Meteor.isClient) {
     'depthCount' : function(){
       return Session.get('treeDepth');
     },
-    hideControls : function(){
+    'hideControls' : function(){
       return ( Session.get('pointsInNumber') > 0);
     }
   });
@@ -112,8 +112,8 @@ Template.body.rendered = function () {
   var canvasWidth = $('#svg-canvas').width();
   var canvasHeight = $('#svg-canvas').height();
   $('#addRandom').click(function(){
-    var randX = Math.floor(Math.random()*( canvasWidth-20+1) + 10);
-    var randY = Math.floor(Math.random()*( canvasHeight-20+1) + 10);
+    var randX = Math.floor(Math.random()*( canvasWidth-40+1) + 20);
+    var randY = Math.floor(Math.random()*( canvasHeight-40+1) + 20);
 
     addPoint(randX, randY, true);
   });
@@ -121,8 +121,8 @@ Template.body.rendered = function () {
   $('#add10Random').click(function(){
     for(var i =0; i < 10; i++)
     {
-      var randX = Math.floor(Math.random()*( canvasWidth-20+1) + 10);
-      var randY = Math.floor(Math.random()*( canvasHeight-20+1) + 10);
+      var randX = Math.floor(Math.random()*( canvasWidth-40+1) + 20);
+      var randY = Math.floor(Math.random()*( canvasHeight-40+1) + 20);
 
       addPoint(randX, randY, false);
     }

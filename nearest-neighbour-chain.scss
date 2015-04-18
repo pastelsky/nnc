@@ -79,7 +79,9 @@ html, body{
 
 }
 
-
+circle.fillme{
+	fill:yellow !important;
+}
 button{
 	padding:10px 15px;
 	box-shadow: none;
@@ -325,6 +327,10 @@ body.facebook{
 	linear-gradient(90deg, rgba(255,255,255,.01) 1px, transparent 1px);
 	background-size:100px 100px, 100px 100px, 20px 20px, 20px 20px;
 	background-position:-2px -2px, -2px -2px, -1px -1px, -1px -1px;
+
+	circle.fill{
+		fill:$fbaccent !important;
+	}
 
 	.controls.hidden{
 		filter :blur(10px) contrast(100%);
