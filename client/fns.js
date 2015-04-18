@@ -69,6 +69,9 @@ window.addPoint = function addPoint(x, y, showNotif){
       className: 'success',
     });
 
+  if(Session.get('calcDone'))
+    startClustering();
+
 };
 
 window.addPath = function(pID, qID){
