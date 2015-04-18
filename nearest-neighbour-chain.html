@@ -1,0 +1,38 @@
+<head>
+	<title>nearest-neighbour-chain</title>
+</head>
+
+<body class="facebook">
+	<svg id="svg-canvas"></svg>
+
+	<div class="controls {{#if hideControls}} hidden {{/if}}">
+		<button class="pure-button-primary pure-button" id="addRandom"> Add Point (A)</button>
+		<button class="pure-button-primary pure-button mtop" id="add10Random"> Add 10 Points</button>
+		<button class="pure-button-primary pure-button mtop" id="clearCanvas">Clear Canvas (C)</button>
+		<button class="pure-button-primary pure-button mtop" id="startCluster">Start Clustering (S)</button>
+
+		<form class="pure-form mtop">
+
+			<div class="halfwidth">
+				<input type="text" value="{{pointCount}}" disabled />
+				<label>Points</label>
+			</div>
+			{{#if cDone}}
+			<div class="halfwidth">
+				<input  type="text" disabled value="{{timeCount}}">
+				<label>ms</label>
+			</div>
+			<input type="range" value="2" class="mtop " min="1" max="{{pointCount}}" id="clusterDOM">
+			<div class="minmax">
+				<span class="left">1</span>
+				<span class="right">{{pointCount}}</span>
+			</div>	
+			<label class="mtop wide">Tree Depth {{depthCount}}</label>
+
+			{{/if}}
+
+		</form>
+
+	</div>
+
+</body>
