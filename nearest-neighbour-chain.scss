@@ -51,6 +51,18 @@ html, body{
 	transform: translateY(-20%);
 }
 
+.github-link{
+	position: absolute;
+	right: 22%;
+	bottom: 15%;
+	opacity: 0.3;
+	transition:all 0.2s;
+
+	&:hover{
+		opacity: 1;
+	}
+}
+
 .mtop{
 	margin-top: 2rem;
 }
@@ -99,6 +111,7 @@ button{
 		cursor: pointer;
 		color:$accentColor;
 		border-color: $accentColor;
+		opacity: 0.8;
 
 	}
 
