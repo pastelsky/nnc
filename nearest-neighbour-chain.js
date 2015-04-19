@@ -130,32 +130,41 @@ Template.body.rendered = function () {
 
 
     /***********
-    shortcuts
+    keyboard shortcuts
     ***********/
 
-    $('html').on('keypress', function(e){
+    $('html').on('keydown', function(e){
 
 
-      //Undo - U
-      if(e.keyCode == 117 || e.keyCode == 85)
-        $('#undo').trigger('click');
+      switch (e.keyCode){
 
+        //clear canvas (c or C)
+        case 99  :
+        case 67  :  $('#clearCanvas').trigger('click'); break;
 
+        //add random point (a or A)
+        case 65  :
+        case 97  :  $('#addRandom').trigger('click'); break;
 
-    //clear canvas
-    else if(e.keyCode == 99 || e.keyCode == 67){
-      $('#clearCanvas').trigger('click')
-    }
+        //add 10 random points (r or R)
+        case 82  :
+        case 114  :  $('#add10Random').trigger('click'); break;
 
-    //add Random point
-    else if(e.keyCode == 65 || e.keyCode == 97){
-      $('#addRandom').trigger('click')
-    }
+        //start clustering (s or S)
+        case 83  :
+        case 115 :  $('#startCluster').trigger('click'); break;
 
-    //start Clustering
-    else if(e.keyCode == 83 || e.keyCode == 115){
-      $('#startCluster').trigger('click');
-    }
+        //decrease tree depth
+        case 37  :  $('#clusterDOM').val($('#clusterDOM').val()-1); 
+        $('#clusterDOM').trigger("change");
+        break;
+
+        //increase tree depth
+        case 39  :  $('#clusterDOM').val($('#clusterDOM').val() + 0.1);  
+        $('#clusterDOM').trigger("change");
+        break;
+
+      }
 
   }); //keypress
 
