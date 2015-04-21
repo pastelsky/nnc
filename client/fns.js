@@ -1,3 +1,10 @@
+/*****************************************
+This file contains auxilliary functions
+to perform logging and path/point animation
+********************************************/
+
+
+//Variable defaults
 window.clusterArray =[];
 window.pointArray =[];
 
@@ -9,9 +16,11 @@ Session.setDefault('depthCounter', 0);
 Session.set('calcDone', false);
 Session.set('treeDepth', 2);
 
-
+window.t0;
 window.s;
 
+
+//Function to calculate the distance matrix for every point
 
 window.calcDistanceArray = function(src)
 {
@@ -28,6 +37,7 @@ window.calcDistanceArray = function(src)
 
 }
 
+//Function to add a point to canvas
 window.addPoint = function addPoint(x, y, showNotif){
   var c = s.circle(x, y, 10);
   c.attr({
@@ -73,6 +83,10 @@ window.addPoint = function addPoint(x, y, showNotif){
     startClustering();
 
 };
+
+
+//Function to add a path between two points,
+// given their ID's
 
 window.addPath = function(pID, qID){
 
@@ -140,11 +154,12 @@ window.addPath = function(pID, qID){
 
   });
 
-
-
   pathArray.push(p);
 }
 
+
+//Custom logging function that allows colored
+// messages to printed at the browser console
 
 window.log = function log(msg, color){
   color = color || "black";

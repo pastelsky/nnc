@@ -1,10 +1,21 @@
+<!-- 
+Meteor stack must be installed to run the demo
+Find more information at https://www.meteor.com/install
+
+Or if you want to try a web based demo, 
+head over to nnc.meteor.com -->
+
+
 <head>
 	<title>nearest-neighbour-chain</title>
 </head>
 
-<body class="facebook">
+<body class="blue-theme">
+
+	<!-- Canvas where points and path are drawn -->
 	<svg id="svg-canvas"></svg>
 
+	<!-- Various controls to interact with the canvas -->
 	<div class="controls {{#if hideControls}} hidden {{/if}}">
 		<button class="pure-button-primary pure-button" id="addRandom"> Add Point (A)</button>
 		<button class="pure-button-primary pure-button mtop" id="add10Random"> Add 10 Points (R)</button>
@@ -13,30 +24,39 @@
 
 		<form class="pure-form mtop">
 
+			<!-- Displays a count of current number of points -->
 			<div class="halfwidth">
 				<input type="text" value="{{pointCount}}" disabled />
 				<label>Points</label>
 			</div>
+
+			<!-- If clustering is done, show the execution time and tree depth adjustment -->
 			{{#if cDone}}
 			<div class="halfwidth">
-				<input  type="text" disabled value="{{timeCount}}">
-				<label>ms</label>
-			</div>
-			<input type="range" value="2" class="mtop " min="1" max="{{pointCount}}" id="clusterDOM">
-			<div class="minmax">
-				<span class="left">1</span>
-				<span class="right">{{pointCount}}</span>
-			</div>	
-			<label class="mtop wide">Tree Depth {{depthCount}}</label>
 
-			{{/if}}
+			<!-- Note: Timecount does not represent accurate running time of 
+			the program as the animations are slowed down to make it decipherable -->
+			<input  type="text" disabled value="{{timeCount}}">
+			<label>ms</label>
+		</div>
 
-		</form>
+		<!-- control for chosing where the dendogram gets cut -->
+		<input type="range" value="2" class="mtop " min="1" max="{{pointCount}}" id="clusterDOM">
+		<div class="minmax">
+			<span class="left">1</span>
+			<span class="right">{{pointCount}}</span>
+		</div>	
+		<label class="mtop wide">Tree Depth {{depthCount}}</label>
 
-		<a href="https://github.com/shubhamsizzles/nnc" class="github-link">
-			<img src="github.png">
-		</a>
+		{{/if}}
 
-	</div>
+	</form>
+
+	<!-- gitHub link to code -->
+	<a href="https://github.com/shubhamsizzles/nnc" class="github-link">
+		<img src="github.png">
+	</a>
+
+</div>
 
 </body>

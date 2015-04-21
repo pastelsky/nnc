@@ -1,6 +1,13 @@
+/*****************************************************************
+This file contains event handlers, keyboard shortcuts and other 
+functions that directly/indirectly perform DOM manipulation.
 
+Logic of the program can be found at /client/logic.js and auxillary
+functions at /client/fns.js
+******************************************************************/
 
 if (Meteor.isClient) {
+  //Client side code
 
   Template.body.helpers({
 
@@ -25,6 +32,7 @@ if (Meteor.isClient) {
   });
 
   Template.body.events({
+
 
     'click #clearCanvas' : function(){
 
@@ -67,7 +75,6 @@ if (Meteor.isClient) {
         selString += ">g ";
       }
 
-      console.log("Selstring is : " + selString);
       $(selString).each(function(){
 
         var curCluster = Snap.select('#' + $(this).attr('id'));
