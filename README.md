@@ -1,14 +1,14 @@
 
-#Visualisation of nearest neighbour chain algorithm
+# Visualisation of nearest neighbour chain algorithm
 
-##Introduction
+## Introduction
 This project aims to provide an animated step by step demonstration of how [heirarchial agglomerative clustering](http://en.wikipedia.org/wiki/Hierarchical_clustering) can be accomplished using the [nearest neighbour chaining](http://en.wikipedia.org/wiki/Nearest-neighbor_chain_algorithm) algorithm .
 
 Coded as a part of Advanced Data Structures project.
 
 ![ok](http://upload.wikimedia.org/wikipedia/commons/d/db/Nearest-neighbor_chain_algorithm_animated.gif)
 
-##How it works
+## How it works
 * Your laptop/desktop's viewport is considered a blank canvas to which points/nodes can be added. 
 * Clustering takes place using [single-linkage](http://en.wikipedia.org/wiki/Single-linkage_clustering) nearest-neighbor clustering.
 * The size of the cluster cloud can be modified using the range slider.
@@ -17,7 +17,7 @@ Coded as a part of Advanced Data Structures project.
 ![bye](http://i.imgur.com/MOSdbK0.png?1)
 
 
-##Keyboard Shortcuts
+## Keyboard Shortcuts
 Shorcut Key | Function
 ------------ | -------------
 A or a | Add a Random point to the canvas
